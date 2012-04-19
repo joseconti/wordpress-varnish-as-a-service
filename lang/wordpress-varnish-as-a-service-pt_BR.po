@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-varnish-aas\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-19 08:54+0100\n"
+"PO-Revision-Date: 2012-04-19 09:08+0100\n"
+"Last-Translator: Javier Casares <javier@casares.org>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Javier\\Dropbox\\Varnish\\plugins-para-varnish\\wordpress-varnish-as-a-service\\trunk\n"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:129
+msgid "Varnish as a Service Configuration"
+msgstr "Configuração do Varnish as a Service"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:174
+msgid "Settings Saved!"
+msgstr "Configurações Salvas!"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:178
+msgid "You do not have the privileges."
+msgstr "Você não tem os privilégios necessários."
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:188
+msgid "Varnish as a Service Administration"
+msgstr "Administração do Varnish as a Service"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:189
+msgid "Varnish Server configuration"
+msgstr "Configuração de Varnish Server"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:193
+msgid "Varnish Administration IP Address"
+msgstr "Endereço IP Varnish Administração"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:194
+msgid "Varnish Administration Port"
+msgstr "Varnish Porta Administração"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:195
+msgid "Varnish Secret"
+msgstr "Varnish Secret"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:196
+msgid "Varnish Version"
+msgstr "Varnish Versão"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:214
+msgid "Timeout"
+msgstr "Tempo Limite"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:214
+msgid "seconds"
+msgstr "segundo"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:215
+msgid "Use admin port"
+msgstr "Use a porta de administração"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:216
+msgid "Also purge all page navigation"
+msgstr "Também limpar o cache de toda navegação de páginas"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:217
+msgid "Also purge all comment navigation"
+msgstr "Também limpar o cache de toda navegação de comentários"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:218
+msgid "Save Changes"
+msgstr "Salvar Mudanças"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:219
+msgid "Purge All Blog Cache"
+msgstr "Limpar Todo Cache do Blog"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:219
+msgid "(Use only if necessary)"
+msgstr "(Use apenas se necessário)"
+
