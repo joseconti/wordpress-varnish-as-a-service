@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors JavierCasares
-Tags varnish
-Requires at least 3.3
-Tested up to 3.3.1
-Stable tag 1.0.1
+Contributors: JavierCasares
+Tags: varnish
+Requires at least: 3.3
+Tested up to: 3.3.1
+Stable tag: 1.0.1
 
 Clear your Varnish cache when new, edited or deleted content happens.
 
