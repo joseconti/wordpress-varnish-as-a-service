@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-varnish-aas\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-29 12:29+0100\n"
+"PO-Revision-Date: 2012-04-29 12:29+0100\n"
+"Last-Translator: Javier Casares <javier@casares.org>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Javier\\Dropbox\\Varnish\\plugins-para-varnish\\wordpress-varnish-as-a-service\\trunk\n"
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:92
+msgid "Varnish as a Service Configuration"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:124
+msgid "Settings Saved!"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:129
+msgid "Purging Everything!"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:135
+msgid "Testing Connection to Varnish Server"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:148
+msgid "Varnish as a Service Administration"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:151
+msgid "Server IP Address"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:153
+msgid "Server Port"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:155
+msgid "Use Admin port"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:157
+msgid "Secret Key"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:159
+msgid "Version"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:164
+msgid "Timeout"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:165
+msgid "seconds"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:167
+msgid "Save Changes"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:167
+msgid "Purge All Blog Cache"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:167
+msgid "Test Connection to Varnish"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:250
+msgid "OK - Connection to Server"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:252
+msgid "INFO - Using Admin Port"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:259
+msgid "OK - Authentication"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:270
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:289
+msgid "OK - Cache flush"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:272
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:291
+msgid "KO - Cache flush"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:272
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:291
+msgid "Verify your Varnish version"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:275
+msgid "KO - Invalid Secret Key"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:278
+msgid "INFO - Authentication not required"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:295
+msgid "INFO - HTTP Purge"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:302
+msgid "OK - Request"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:304
+msgid "KO - Request"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:309
+msgid "KO - Connection to Server"
+msgstr ""
+
+#: C:\Users\Javier\Dropbox\Varnish\plugins-para-varnish\wordpress-varnish-as-a-service\trunk/wordpress-varnish-as-a-service.php:309
+msgid "IP address or port closed. Verify your firewall or iptables."
+msgstr ""
+
