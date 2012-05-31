@@ -2,8 +2,8 @@
 Contributors: JavierCasares
 Tags: varnish
 Requires at least: 2.5
-Tested up to: 3.3.2
-Stable tag: 1.1.0
+Tested up to: 3.4
+Stable tag: 1.1.1
 
 Clear your Varnish cache when new, edited or deleted content happens.
 
@@ -27,8 +27,8 @@ Based on <a href="http://wordpress.org/extend/plugins/wordpress-varnish/">WordPr
 
 == Changelog ==
 
-= 1.0.1 =
- First stable version
+= 1.1.1 =
+ Up to 3 Varnish servers
 
 = 1.1.0 =
  Delete configuration when uninstalled
@@ -36,3 +36,6 @@ Based on <a href="http://wordpress.org/extend/plugins/wordpress-varnish/">WordPr
  Controlled login to Varnish with or without Secret Key
  Tested up to WordPress 2.5
  Connection test to Varnish Server
+
+= 1.0.1 =
+ First stable version

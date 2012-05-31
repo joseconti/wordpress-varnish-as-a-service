@@ -1,45 +1,120 @@
 <?php
 /*
 Plugin Name: WordPress Varnish as a Service
-Version: 1.1.0
+Version: 1.1.1
 Author: Javier Casares
 Author URI: http://javiercasares.com/
 Plugin URI: http://javiercasares.com/wp-varnish-aas/
 Description: A plugin for purging Varnish cache when content is published or edited. It works with HTTP purge and Admin Port purge. Works with Varnish 2 (PURGE) and Varnish 3 (BAN) versions. Based on WordPress Varnish and Plugin Varnish Purges.
 */
 class WPVarnish {
-	public $wpv_addr_optname;
-	public $wpv_port_optname;
-	public $wpv_secret_optname;
-	public $wpv_timeout_optname;
-	public $wpv_use_adminport_optname;
-	public $wpv_use_version_optname;
+	public $wpv_addr_optname_1;
+	public $wpv_port_optname_1;
+	public $wpv_secret_optname_1;
+	public $wpv_timeout_optname_1;
+	public $wpv_use_adminport_optname_1;
+	public $wpv_use_version_optname_1;
+	public $wpv_server_optname_1;
+	public $wpv_addr_optname_2;
+	public $wpv_port_optname_2;
+	public $wpv_secret_optname_2;
+	public $wpv_timeout_optname_2;
+	public $wpv_use_adminport_optname_2;
+	public $wpv_use_version_optname_2;
+	public $wpv_server_optname_2;
+	public $wpv_addr_optname_3;
+	public $wpv_port_optname_3;
+	public $wpv_secret_optname_3;
+	public $wpv_timeout_optname_3;
+	public $wpv_use_adminport_optname_3;
+	public $wpv_use_version_optname_3;
+	public $wpv_server_optname_3;
 	public $commenter;
 	function WPVarnish() {
 		global $post;
-		$wpv_addr_optval = "127.0.0.1";
-		$wpv_port_optval = "80";
-		$wpv_secret_optval = "";
-		$wpv_timeout_optval = 5;
-		$wpv_use_adminport_optval = 0;
-		$wpv_use_version_optval = 3;
+		$wpv_addr_optval_1 = "127.0.0.1";
+		$wpv_port_optval_1 = "80";
+		$wpv_secret_optval_1 = "";
+		$wpv_timeout_optval_1 = 5;
+		$wpv_use_adminport_optval_1 = 0;
+		$wpv_use_version_optval_1 = 3;
+		$wpv_server_optval_1 = 1;
+		$wpv_addr_optval_2 = "127.0.0.1";
+		$wpv_port_optval_2 = "80";
+		$wpv_secret_optval_2 = "";
+		$wpv_timeout_optval_2 = 5;
+		$wpv_use_adminport_optval_2 = 0;
+		$wpv_use_version_optval_2 = 3;
+		$wpv_server_optval_2 = 0;
+		$wpv_addr_optval_3 = "127.0.0.1";
+		$wpv_port_optval_3 = "80";
+		$wpv_secret_optval_3 = "";
+		$wpv_timeout_optval_3 = 5;
+		$wpv_use_adminport_optval_3 = 0;
+		$wpv_use_version_optval_3 = 3;
+		$wpv_server_optval_3 = 0;
 		if((get_option("wpvarnish_addr") == FALSE)) {
-			add_option("wpvarnish_addr", $wpv_addr_optval, '', 'yes');
+			add_option("wpvarnish_addr", $wpv_addr_optval_1, '', 'yes');
 		}
 		if((get_option("wpvarnish_port") == FALSE)) {
-			add_option("wpvarnish_port", $wpv_port_optval, '', 'yes');
+			add_option("wpvarnish_port", $wpv_port_optval_1, '', 'yes');
 		}
 		if((get_option("wpvarnish_secret") == FALSE)) {
-			add_option("wpvarnish_secret", $wpv_secret_optval, '', 'yes');
+			add_option("wpvarnish_secret", $wpv_secret_optval_1, '', 'yes');
 		}
 		if((get_option("wpvarnish_timeout") == FALSE)) {
-			add_option("wpvarnish_timeout", $wpv_timeout_optval, '', 'yes');
+			add_option("wpvarnish_timeout", $wpv_timeout_optval_1, '', 'yes');
 		}
 		if((get_option("wpvarnish_use_version") == FALSE)) {
-			add_option("wpvarnish_use_version", $wpv_use_version_optval, '', 'yes');
+			add_option("wpvarnish_use_version", $wpv_use_version_optval_1, '', 'yes');
 		}
 		if((get_option("wpvarnish_use_adminport") == FALSE)) {
-			add_option("wpvarnish_use_adminport", $wpv_use_adminport_optval, '', 'yes');
+			add_option("wpvarnish_use_adminport", $wpv_use_adminport_optval_1, '', 'yes');
+		}
+		if((get_option("wpvarnish_server") == FALSE)) {
+			add_option("wpvarnish_server", $wpv_server_optval_1, '', 'yes');
+		}
+		if((get_option("wpvarnish_addr_2") == FALSE)) {
+			add_option("wpvarnish_addr_2", $wpv_addr_optval_2, '', 'yes');
+		}
+		if((get_option("wpvarnish_port_2") == FALSE)) {
+			add_option("wpvarnish_port_2", $wpv_port_optval_2, '', 'yes');
+		}
+		if((get_option("wpvarnish_secret_2") == FALSE)) {
+			add_option("wpvarnish_secret_2", $wpv_secret_optval_2, '', 'yes');
+		}
+		if((get_option("wpvarnish_timeout_2") == FALSE)) {
+			add_option("wpvarnish_timeout_2", $wpv_timeout_optval_2, '', 'yes');
+		}
+		if((get_option("wpvarnish_use_version_2") == FALSE)) {
+			add_option("wpvarnish_use_version_2", $wpv_use_version_optval_2, '', 'yes');
+		}
+		if((get_option("wpvarnish_use_adminport_2") == FALSE)) {
+			add_option("wpvarnish_use_adminport_2", $wpv_use_adminport_optval_2, '', 'yes');
+		}
+		if((get_option("wpvarnish_server_2") == FALSE)) {
+			add_option("wpvarnish_server_2", $wpv_server_optval_2, '', 'yes');
+		}
+		if((get_option("wpvarnish_addr_3") == FALSE)) {
+			add_option("wpvarnish_addr_3", $wpv_addr_optval_3, '', 'yes');
+		}
+		if((get_option("wpvarnish_port_3") == FALSE)) {
+			add_option("wpvarnish_port_3", $wpv_port_optval_3, '', 'yes');
+		}
+		if((get_option("wpvarnish_secret_3") == FALSE)) {
+			add_option("wpvarnish_secret_3", $wpv_secret_optval_3, '', 'yes');
+		}
+		if((get_option("wpvarnish_timeout_3") == FALSE)) {
+			add_option("wpvarnish_timeout_3", $wpv_timeout_optval_3, '', 'yes');
+		}
+		if((get_option("wpvarnish_use_version_3") == FALSE)) {
+			add_option("wpvarnish_use_version_3", $wpv_use_version_optval_3, '', 'yes');
+		}
+		if((get_option("wpvarnish_use_adminport_3") == FALSE)) {
+			add_option("wpvarnish_use_adminport_3", $wpv_use_adminport_optval_3, '', 'yes');
+		}
+		if((get_option("wpvarnish_server_3") == FALSE)) {
+			add_option("wpvarnish_server_3", $wpv_server_optval_3, '', 'yes');
 		}
 		add_action('init', array(&$this, 'WPVarnishLocalization'));
 		add_action('admin_menu', array(&$this, 'WPVarnishAdminMenu'));
@@ -95,30 +170,95 @@ class WPVarnish {
 		if(current_user_can('administrator')) {
 			if($_SERVER["REQUEST_METHOD"] == "POST") {
 				if(isset($_POST['wpvarnish_admin'])) {
-					if(isset($_POST["wpvarnish_addr"])) {
-						$wpv_addr_optval = trim(strip_tags($_POST["wpvarnish_addr"]));
-						update_option("wpvarnish_addr", $wpv_addr_optval);
+					if(isset($_POST["wpvarnish_addr_1"])) {
+						$wpv_addr_optval = trim(strip_tags($_POST["wpvarnish_addr_1"]));
+						update_option("wpvarnish_addr_1", $wpv_addr_optval);
 					}
-					if(isset($_POST["wpvarnish_port"])) {
-						$wpv_port_optval = (int)trim(strip_tags($_POST["wpvarnish_port"]));
-						update_option("wpvarnish_port", $wpv_port_optval);
+					if(isset($_POST["wpvarnish_port_1"])) {
+						$wpv_port_optval = (int)trim(strip_tags($_POST["wpvarnish_port_1"]));
+						update_option("wpvarnish_port_1", $wpv_port_optval);
 					}
-					if(isset($_POST["wpvarnish_secret"])) {
-						$wpv_secret_optval = trim(strip_tags($_POST["wpvarnish_secret"]));
-						update_option("wpvarnish_secret", $wpv_secret_optval);
+					if(isset($_POST["wpvarnish_secret_1"])) {
+						$wpv_secret_optval = trim(strip_tags($_POST["wpvarnish_secret_1"]));
+						update_option("wpvarnish_secret_1", $wpv_secret_optval);
 					}
-					if(isset($_POST["wpvarnish_timeout"])) {
-						$wpv_timeout_optval = (int)trim(strip_tags($_POST["wpvarnish_timeout"]));
-						update_option("wpvarnish_timeout", $wpv_timeout_optval);
+					if(isset($_POST["wpvarnish_timeout_1"])) {
+						$wpv_timeout_optval = (int)trim(strip_tags($_POST["wpvarnish_timeout_1"]));
+						update_option("wpvarnish_timeout_1", $wpv_timeout_optval);
 					}
-					if(isset($_POST["wpvarnish_use_adminport"])) {
-						update_option("wpvarnish_use_adminport", 1);
+					if(isset($_POST["wpvarnish_use_adminport_1"])) {
+						update_option("wpvarnish_use_adminport_1", 1);
 					} else {
-						update_option("wpvarnish_use_adminport", 0);
+						update_option("wpvarnish_use_adminport_1", 0);
 					}
-					if(isset($_POST["wpvarnish_use_version"])) {
-						$wpv_use_version_optval = $_POST["wpvarnish_use_version"];
-						update_option("wpvarnish_use_version", $wpv_use_version_optval);
+					if(isset($_POST["wpvarnish_use_version_1"])) {
+						$wpv_use_version_optval = $_POST["wpvarnish_use_version_1"];
+						update_option("wpvarnish_use_version_1", $wpv_use_version_optval);
+					}
+					if(isset($_POST["wpvarnish_server_1"])) {
+						update_option("wpvarnish_server_1", 1);
+					} else {
+						update_option("wpvarnish_server_1", 0);
+					}
+					if(isset($_POST["wpvarnish_addr_2"])) {
+						$wpv_addr_optval = trim(strip_tags($_POST["wpvarnish_addr_2"]));
+						update_option("wpvarnish_addr_2", $wpv_addr_optval);
+					}
+					if(isset($_POST["wpvarnish_port_2"])) {
+						$wpv_port_optval = (int)trim(strip_tags($_POST["wpvarnish_port_2"]));
+						update_option("wpvarnish_port_2", $wpv_port_optval);
+					}
+					if(isset($_POST["wpvarnish_secret_2"])) {
+						$wpv_secret_optval = trim(strip_tags($_POST["wpvarnish_secret_2"]));
+						update_option("wpvarnish_secret_2", $wpv_secret_optval);
+					}
+					if(isset($_POST["wpvarnish_timeout_2"])) {
+						$wpv_timeout_optval = (int)trim(strip_tags($_POST["wpvarnish_timeout_2"]));
+						update_option("wpvarnish_timeout_2", $wpv_timeout_optval);
+					}
+					if(isset($_POST["wpvarnish_use_adminport_2"])) {
+						update_option("wpvarnish_use_adminport_2", 1);
+					} else {
+						update_option("wpvarnish_use_adminport_2", 0);
+					}
+					if(isset($_POST["wpvarnish_use_version_2"])) {
+						$wpv_use_version_optval = $_POST["wpvarnish_use_version_2"];
+						update_option("wpvarnish_use_version_2", $wpv_use_version_optval);
+					}
+					if(isset($_POST["wpvarnish_server_2"])) {
+						update_option("wpvarnish_server_2", 1);
+					} else {
+						update_option("wpvarnish_server_2", 0);
+					}
+					if(isset($_POST["wpvarnish_addr_3"])) {
+						$wpv_addr_optval = trim(strip_tags($_POST["wpvarnish_addr_3"]));
+						update_option("wpvarnish_addr_3", $wpv_addr_optval);
+					}
+					if(isset($_POST["wpvarnish_port_3"])) {
+						$wpv_port_optval = (int)trim(strip_tags($_POST["wpvarnish_port_3"]));
+						update_option("wpvarnish_port_3", $wpv_port_optval);
+					}
+					if(isset($_POST["wpvarnish_secret_3"])) {
+						$wpv_secret_optval = trim(strip_tags($_POST["wpvarnish_secret_3"]));
+						update_option("wpvarnish_secret_3", $wpv_secret_optval);
+					}
+					if(isset($_POST["wpvarnish_timeout_3"])) {
+						$wpv_timeout_optval = (int)trim(strip_tags($_POST["wpvarnish_timeout_3"]));
+						update_option("wpvarnish_timeout_3", $wpv_timeout_optval);
+					}
+					if(isset($_POST["wpvarnish_use_adminport_3"])) {
+						update_option("wpvarnish_use_adminport_3", 1);
+					} else {
+						update_option("wpvarnish_use_adminport_3", 0);
+					}
+					if(isset($_POST["wpvarnish_use_version_3"])) {
+						$wpv_use_version_optval = $_POST["wpvarnish_use_version_3"];
+						update_option("wpvarnish_use_version_3", $wpv_use_version_optval);
+					}
+					if(isset($_POST["wpvarnish_server_3"])) {
+						update_option("wpvarnish_server_3", 1);
+					} else {
+						update_option("wpvarnish_server_3", 0);
 					}
 ?>
 	<div class="updated"><p><?php echo __('Settings Saved!','wp-varnish-aas'); ?></p></div>
@@ -130,41 +270,124 @@ class WPVarnish {
 <?php
 					$this->WPVarnishPurgeAll();
 				}
-				if (isset($_POST['wpvarnish_test_blog_cache'])) {
+				if (isset($_POST['wpvarnish_test_blog_cache_1'])) {
 ?>
-	<div class="updated"><p><?php echo __('Testing Connection to Varnish Server','wp-varnish-aas'); ?></p></div>
+	<div class="updated"><p><?php echo __('Testing Connection to Varnish Server','wp-varnish-aas'); ?> 1</p></div>
 <?php
-					$this->WPVarnishTestConnect();
+					$this->WPVarnishTestConnect(1);
+				}
+				if (isset($_POST['wpvarnish_test_blog_cache_2'])) {
+?>
+	<div class="updated"><p><?php echo __('Testing Connection to Varnish Server','wp-varnish-aas'); ?> 2</p></div>
+<?php
+					$this->WPVarnishTestConnect(2);
+				}
+				if (isset($_POST['wpvarnish_test_blog_cache_3'])) {
+?>
+	<div class="updated"><p><?php echo __('Testing Connection to Varnish Server','wp-varnish-aas'); ?> 3</p></div>
+<?php
+					$this->WPVarnishTestConnect(3);
 				}
 			}
-			$wpv_timeout_optval = get_option("wpvarnish_timeout");
-			$wpv_use_adminport_optval = get_option("wpvarnish_use_adminport");
-			$addrs = get_option("wpvarnish_addr");
-			$ports = get_option("wpvarnish_port");
-			$secrets = get_option("wpvarnish_secret");
-			$versions = get_option("wpvarnish_use_version");
+			$wpv_addr_optval_1 = get_option("wpvarnish_addr");
+			$wpv_port_optval_1 = get_option("wpvarnish_port");
+			$wpv_secret_optval_1 = get_option("wpvarnish_secret");
+			$wpv_timeout_optval_1 = get_option("wpvarnish_timeout");
+			$wpv_use_adminport_optval_1 = get_option("wpvarnish_use_adminport");
+			$wpv_use_version_optval_1 = get_option("wpvarnish_use_version");
+			$wpv_server_optval_1 = get_option("wpvarnish_server");
+			$wpv_addr_optval_2 = get_option("wpvarnish_addr_2");
+			$wpv_port_optval_2 = get_option("wpvarnish_port_2");
+			$wpv_secret_optval_2 = get_option("wpvarnish_secret_2");
+			$wpv_timeout_optval_2 = get_option("wpvarnish_timeout_2");
+			$wpv_use_adminport_optval_2 = get_option("wpvarnish_use_adminport_2");
+			$wpv_use_version_optval_2 = get_option("wpvarnish_use_version_2");
+			$wpv_server_optval_2 = get_option("wpvarnish_server_2");
+			$wpv_addr_optval_3 = get_option("wpvarnish_addr_3");
+			$wpv_port_optval_3 = get_option("wpvarnish_port_3");
+			$wpv_secret_optval_3 = get_option("wpvarnish_secret_3");
+			$wpv_timeout_optval_3 = get_option("wpvarnish_timeout_3");
+			$wpv_use_adminport_optval_3 = get_option("wpvarnish_use_adminport_3");
+			$wpv_use_version_optval_3 = get_option("wpvarnish_use_version_3");
+			$wpv_server_optval_3 = get_option("wpvarnish_server_3");
 ?>
 	<div class="wrap">
 		<h2><?php echo __("Varnish as a Service Administration",'wp-varnish-aas'); ?></h2>
 		<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
-			<dl>
-				<dt><label for="varipaddress"><?php echo __("Server IP Address",'wp-varnish-aas'); ?></label></dt>
-				<dd><input id="varipaddress" type="text" name="wpvarnish_addr" value="<?= $addrs; ?>" style="width: 120px;"></dd>
-				<dt><label for="varport"><?php echo __("Server Port",'wp-varnish-aas'); ?></label></dt>
-				<dd><input id="varport" type="text" name="wpvarnish_port" value="<?= $ports; ?>" style="width: 50px;"></dd>
-				<dt><label for="varuseadmin"><?php echo __("Use Admin port",'wp-varnish-aas'); ?></label></dt>
-				<dd><input id="varuseadmin" type="checkbox" name="wpvarnish_use_adminport" value="1"<?php if($wpv_use_adminport_optval == 1) echo ' checked'; ?>></dd>
-				<dt><label for="varsecret"><?php echo __("Secret Key",'wp-varnish-aas'); ?></label></dt>
-				<dd><input id="varsecret" type="text" name="wpvarnish_secret" value="<?= $secrets; ?>" style="width: 260px;"></dd>
-				<dt><label for="varversion"><?php echo __("Version",'wp-varnish-aas'); ?></label></dt>
-				<dd><select id="varversion" name="wpvarnish_use_version">
-					<option value="2"<?php if($versions == 2) echo " selected"; ?>>v2 - PURGE</option>
-					<option value="3"<?php if($versions == 3) echo " selected"; ?>>v3 - BAN</option>
-				</select></dd>
-				<dt><label for="vartimeout"><?php echo __("Timeout",'wp-varnish-aas'); ?></label></dt>
-				<dd><input id="vartimeout" class="small-text" type="text" name="wpvarnish_timeout" value="<?php echo $wpv_timeout_optval; ?>"> <?php echo __("seconds",'wp-varnish-aas'); ?></dd>
-			</dl>
-			<p class="submit"><input type="submit" class="button-primary" name="wpvarnish_admin" value="<?php echo __("Save Changes",'wp-varnish-aas'); ?>"> <input type="submit" class="button-secondary" name="wpvarnish_clear_blog_cache" value="<?php echo __("Purge All Blog Cache",'wp-varnish-aas'); ?>"> <input type="submit" class="button-secondary" name="wpvarnish_test_blog_cache" value="<?php echo __("Test Connection to Varnish",'wp-varnish-aas'); ?>"></p>
+		<table width="100%">
+			<tr valign="top">
+				<td>
+					<dl>
+						<dt><label for="varactive1"><?php echo __("Server Activated",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varactive1" type="checkbox" name="wpvarnish_server_1" value="1"<?php if($wpv_server_optval_1 == 1) echo ' checked'; ?>></dd>
+						<dt><label for="varipaddress1"><?php echo __("Server IP Address",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varipaddress1" type="text" name="wpvarnish_addr_1" value="<?= $wpv_addr_optval_1; ?>" style="width: 120px;"></dd>
+						<dt><label for="varport1"><?php echo __("Server Port",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varport1" type="text" name="wpvarnish_port_1" value="<?= $wpv_port_optval_1; ?>" style="width: 50px;"></dd>
+						<dt><label for="varuseadmin1"><?php echo __("Use Admin port",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varuseadmin1" type="checkbox" name="wpvarnish_use_adminport_1" value="1"<?php if($wpv_use_adminport_optval_1 == 1) echo ' checked'; ?>></dd>
+						<dt><label for="varsecret1"><?php echo __("Secret Key",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varsecret1" type="text" name="wpvarnish_secret_1" value="<?= $wpv_secret_optval_1; ?>" style="width: 260px;"></dd>
+						<dt><label for="varversion1"><?php echo __("Version",'wp-varnish-aas'); ?></label></dt>
+						<dd><select id="varversion1" name="wpvarnish_use_version_1">
+							<option value="2"<?php if($wpv_use_version_optval_1 == 2) echo " selected"; ?>>v2 - PURGE</option>
+							<option value="3"<?php if($wpv_use_version_optval_1 == 3) echo " selected"; ?>>v3 - BAN</option>
+						</select></dd>
+						<dt><label for="vartimeout1"><?php echo __("Timeout",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="vartimeout1" class="small-text" type="text" name="wpvarnish_timeout_1" value="<?php echo $wpv_timeout_optval_1; ?>"> <?php echo __("seconds",'wp-varnish-aas'); ?></dd>
+						<dt><?php echo __("Test Connection to Varnish",'wp-varnish-aas'); ?></dt>
+						<dd><input type="submit" class="button-secondary" name="wpvarnish_test_blog_cache_1" value="<?php echo __("Test Connection to Varnish",'wp-varnish-aas'); ?>"></dd>
+					</dl>
+				</td>
+				<td>
+					<dl>
+						<dt><label for="varactive2"><?php echo __("Server Activated",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varactive2" type="checkbox" name="wpvarnish_server_2" value="1"<?php if($wpv_server_optval_2 == 1) echo ' checked'; ?>></dd>
+						<dt><label for="varipaddress2"><?php echo __("Server IP Address",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varipaddress2" type="text" name="wpvarnish_addr_2" value="<?= $wpv_addr_optval_2; ?>" style="width: 120px;"></dd>
+						<dt><label for="varport2"><?php echo __("Server Port",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varport2" type="text" name="wpvarnish_port_2" value="<?= $wpv_port_optval_2; ?>" style="width: 50px;"></dd>
+						<dt><label for="varuseadmin2"><?php echo __("Use Admin port",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varuseadmin2" type="checkbox" name="wpvarnish_use_adminport_2" value="1"<?php if($wpv_use_adminport_optval_2 == 1) echo ' checked'; ?>></dd>
+						<dt><label for="varsecret2"><?php echo __("Secret Key",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varsecret2" type="text" name="wpvarnish_secret_2" value="<?= $wpv_secret_optval_2; ?>" style="width: 260px;"></dd>
+						<dt><label for="varversion2"><?php echo __("Version",'wp-varnish-aas'); ?></label></dt>
+						<dd><select id="varversion2" name="wpvarnish_use_version_2">
+							<option value="2"<?php if($wpv_use_version_optval_2 == 2) echo " selected"; ?>>v2 - PURGE</option>
+							<option value="3"<?php if($wpv_use_version_optval_2 == 3) echo " selected"; ?>>v3 - BAN</option>
+						</select></dd>
+						<dt><label for="vartimeout2"><?php echo __("Timeout",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="vartimeout2" class="small-text" type="text" name="wpvarnish_timeout_2" value="<?php echo $wpv_timeout_optval_2; ?>"> <?php echo __("seconds",'wp-varnish-aas'); ?></dd>
+						<dt><?php echo __("Test Connection to Varnish",'wp-varnish-aas'); ?></dt>
+						<dd><input type="submit" class="button-secondary" name="wpvarnish_test_blog_cache_2" value="<?php echo __("Test Connection to Varnish",'wp-varnish-aas'); ?>"></dd>
+					</dl>
+				</td>
+				<td>
+					<dl>
+						<dt><label for="varactive3"><?php echo __("Server Activated",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varactive3" type="checkbox" name="wpvarnish_server_3" value="1"<?php if($wpv_server_optval_3 == 1) echo ' checked'; ?>></dd>
+						<dt><label for="varipaddress3"><?php echo __("Server IP Address",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varipaddress3" type="text" name="wpvarnish_addr_3" value="<?= $wpv_addr_optval_3; ?>" style="width: 120px;"></dd>
+						<dt><label for="varport3"><?php echo __("Server Port",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varport3" type="text" name="wpvarnish_port_3" value="<?= $wpv_port_optval_3; ?>" style="width: 50px;"></dd>
+						<dt><label for="varuseadmin3"><?php echo __("Use Admin port",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varuseadmin3" type="checkbox" name="wpvarnish_use_adminport_3" value="1"<?php if($wpv_use_adminport_optval_3 == 1) echo ' checked'; ?>></dd>
+						<dt><label for="varsecret3"><?php echo __("Secret Key",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="varsecret3" type="text" name="wpvarnish_secret_3" value="<?= $wpv_secret_optval_3; ?>" style="width: 260px;"></dd>
+						<dt><label for="varversion3"><?php echo __("Version",'wp-varnish-aas'); ?></label></dt>
+						<dd><select id="varversion3" name="wpvarnish_use_version_3">
+							<option value="2"<?php if($wpv_use_version_optval_3 == 2) echo " selected"; ?>>v2 - PURGE</option>
+							<option value="3"<?php if($wpv_use_version_optval_3 == 3) echo " selected"; ?>>v3 - BAN</option>
+						</select></dd>
+						<dt><label for="vartimeout3"><?php echo __("Timeout",'wp-varnish-aas'); ?></label></dt>
+						<dd><input id="vartimeout3" class="small-text" type="text" name="wpvarnish_timeout_3" value="<?php echo $wpv_timeout_optval_3; ?>"> <?php echo __("seconds",'wp-varnish-aas'); ?></dd>
+						<dt><?php echo __("Test Connection to Varnish",'wp-varnish-aas'); ?></dt>
+						<dd><input type="submit" class="button-secondary" name="wpvarnish_test_blog_cache_3" value="<?php echo __("Test Connection to Varnish",'wp-varnish-aas'); ?>"></dd>
+					</dl>
+				</td>
+			</tr>
+		</table>
+		<p class="submit"><input type="submit" class="button-primary" name="wpvarnish_admin" value="<?php echo __("Save Changes",'wp-varnish-aas'); ?>"> <input type="submit" class="button-secondary" name="wpvarnish_clear_blog_cache" value="<?php echo __("Purge All Blog Cache",'wp-varnish-aas'); ?>"></p>
 		</form>
 	</div>
 <?php
@@ -182,27 +405,65 @@ class WPVarnish {
 	}
 	function WPVarnishPurgeObject($wpv_url) {
 		global $varnish_servers;
-		$varnish_test_conn = "";
-		$wpv_purgeaddr = get_option("wpvarnish_addr");
-		$wpv_purgeport = get_option("wpvarnish_port");
-		$wpv_secret = get_option("wpvarnish_secret");
-		$wpv_timeout = get_option("wpvarnish_timeout");
-		$wpv_use_adminport = get_option("wpvarnish_use_adminport");
-		$wpv_use_version = get_option("wpvarnish_use_version");
-		$wpv_wpurl = get_bloginfo('wpurl');
-		$wpv_replace_wpurl = '/^http:\/\/([^\/]+)(.*)/i';
-		$wpv_host = preg_replace($wpv_replace_wpurl, "$1", $wpv_wpurl);
-		$wpv_blogaddr = preg_replace($wpv_replace_wpurl, "$2", $wpv_wpurl);
-		$wpv_url = $wpv_blogaddr.$wpv_url;
-		$varnish_sock = fsockopen($wpv_purgeaddr, $wpv_purgeport, $errno, $errstr, $wpv_timeout);
-		if($varnish_sock) {
-			if($wpv_use_adminport) {
-				$buf = fread($varnish_sock, 1024);
-				if(preg_match('/(\w+)\s+Authentication required./', $buf, &$matches)) {
-					$auth = $this->WPAuth($matches[1], $wpv_secret);
-					fwrite($varnish_sock, "auth ".$auth."\n");
+		$j=0;
+		if(get_option("wpvarnish_server")) {
+			$array_wpv_purgeaddr[$j] = get_option("wpvarnish_addr");
+			$array_wpv_purgeport[$j] = get_option("wpvarnish_port");
+			$array_wpv_secret[$j] = get_option("wpvarnish_secret");
+			$array_wpv_timeout[$j] = get_option("wpvarnish_timeout");
+			$array_wpv_use_adminport[$j] = get_option("wpvarnish_use_adminport");
+			$array_wpv_use_version[$j] = get_option("wpvarnish_use_version");
+			$j++;
+		}
+		if(get_option("wpvarnish_server_2")) {
+			$array_wpv_purgeaddr[$j] = get_option("wpvarnish_addr_2");
+			$array_wpv_purgeport[$j] = get_option("wpvarnish_port_2");
+			$array_wpv_secret[$j] = get_option("wpvarnish_secret_2");
+			$array_wpv_timeout[$j] = get_option("wpvarnish_timeout_2");
+			$array_wpv_use_adminport[$j] = get_option("wpvarnish_use_adminport_2");
+			$array_wpv_use_version[$j] = get_option("wpvarnish_use_version_2");
+			$j++;
+		}
+		if(get_option("wpvarnish_server_3")) {
+			$array_wpv_purgeaddr[$j] = get_option("wpvarnish_addr_3");
+			$array_wpv_purgeport[$j] = get_option("wpvarnish_port_3");
+			$array_wpv_secret[$j] = get_option("wpvarnish_secret_3");
+			$array_wpv_timeout[$j] = get_option("wpvarnish_timeout_3");
+			$array_wpv_use_adminport[$j] = get_option("wpvarnish_use_adminport_3");
+			$array_wpv_use_version[$j] = get_option("wpvarnish_use_version_3");
+			$j++;
+		}
+		for($i=0; $i<$j; $i++) {
+			$wpv_purgeaddr = $array_wpv_purgeaddr[$i];
+			$wpv_purgeport = $array_wpv_purgeport[$i];
+			$wpv_secret = $array_wpv_secret[$i];
+			$wpv_timeout = $array_wpv_timeout[$i];
+			$wpv_use_adminport = $array_wpv_use_adminport[$i];
+			$wpv_use_version = $array_wpv_use_version[$i];
+			$wpv_wpurl = get_bloginfo('wpurl');
+			$wpv_replace_wpurl = '/^http:\/\/([^\/]+)(.*)/i';
+			$wpv_host = preg_replace($wpv_replace_wpurl, "$1", $wpv_wpurl);
+			$wpv_blogaddr = preg_replace($wpv_replace_wpurl, "$2", $wpv_wpurl);
+			$wpv_url = $wpv_blogaddr.$wpv_url;
+			$varnish_sock = fsockopen($wpv_purgeaddr, $wpv_purgeport, $errno, $errstr, $wpv_timeout);
+			if($varnish_sock) {
+				if($wpv_use_adminport) {
 					$buf = fread($varnish_sock, 1024);
-					if(preg_match('/^200/', $buf)) {
+					if(preg_match('/(\w+)\s+Authentication required./', $buf, &$matches)) {
+						$auth = $this->WPAuth($matches[1], $wpv_secret);
+						fwrite($varnish_sock, "auth ".$auth."\n");
+						$buf = fread($varnish_sock, 1024);
+						if(preg_match('/^200/', $buf)) {
+							if ($wpv_use_version == 2) {
+								$out = "purge req.url ~ ^$wpv_url && req.http.host == $wpv_host\n";
+							} elseif ($wpv_use_version == 3) {
+								$out = "ban req.url ~ ^$wpv_url && req.http.host == $wpv_host\n";
+							} else {
+								$out = "ban req.url ~ ^$wpv_url && req.http.host == $wpv_host\n";
+							}
+							fwrite($varnish_sock, $out."\n");
+						}
+					} else {
 						if ($wpv_use_version == 2) {
 							$out = "purge req.url ~ ^$wpv_url && req.http.host == $wpv_host\n";
 						} elseif ($wpv_use_version == 3) {
@@ -213,38 +474,46 @@ class WPVarnish {
 						fwrite($varnish_sock, $out."\n");
 					}
 				} else {
-					if ($wpv_use_version == 2) {
-						$out = "purge req.url ~ ^$wpv_url && req.http.host == $wpv_host\n";
-					} elseif ($wpv_use_version == 3) {
-						$out = "ban req.url ~ ^$wpv_url && req.http.host == $wpv_host\n";
-					} else {
-						$out = "ban req.url ~ ^$wpv_url && req.http.host == $wpv_host\n";
-					}
-					fwrite($varnish_sock, $out."\n");
+					$out = "PURGE $wpv_url HTTP/1.0\r\n";
+					$out .= "Host: $wpv_host\r\n";
+					$out .= "Connection: Close\r\n\r\n";
+					fwrite($varnish_sock, $out);
 				}
-			} else {
-				$out = "PURGE $wpv_url HTTP/1.0\r\n";
-				$out .= "Host: $wpv_host\r\n";
-				$out .= "Connection: Close\r\n\r\n";
-				fwrite($varnish_sock, $out);
+				fclose($varnish_sock);
 			}
-			fclose($varnish_sock);
 		}
 	}
-	function WPVarnishTestConnect() {
+	function WPVarnishTestConnect($servernum) {
 		global $varnish_servers;
 		$varnish_test_conn = "";
-		$wpv_purgeaddr = get_option("wpvarnish_addr");
-		$wpv_purgeport = get_option("wpvarnish_port");
-		$wpv_secret = get_option("wpvarnish_secret");
-		$wpv_timeout = get_option("wpvarnish_timeout");
-		$wpv_use_adminport = get_option("wpvarnish_use_adminport");
-		$wpv_use_version = get_option("wpvarnish_use_version");
+		if($servernum == 1) {
+			$wpv_purgeaddr = get_option("wpvarnish_addr");
+			$wpv_purgeport = get_option("wpvarnish_port");
+			$wpv_secret = get_option("wpvarnish_secret");
+			$wpv_timeout = get_option("wpvarnish_timeout");
+			$wpv_use_adminport = get_option("wpvarnish_use_adminport");
+			$wpv_use_version = get_option("wpvarnish_use_version");
+		} elseif($servernum == 2) {
+			$wpv_purgeaddr = get_option("wpvarnish_addr_2");
+			$wpv_purgeport = get_option("wpvarnish_port_2");
+			$wpv_secret = get_option("wpvarnish_secret_2");
+			$wpv_timeout = get_option("wpvarnish_timeout_2");
+			$wpv_use_adminport = get_option("wpvarnish_use_adminport_2");
+			$wpv_use_version = get_option("wpvarnish_use_version_2");
+		} elseif($servernum == 3) {
+			$wpv_purgeaddr = get_option("wpvarnish_addr_3");
+			$wpv_purgeport = get_option("wpvarnish_port_3");
+			$wpv_secret = get_option("wpvarnish_secret_3");
+			$wpv_timeout = get_option("wpvarnish_timeout_3");
+			$wpv_use_adminport = get_option("wpvarnish_use_adminport_3");
+			$wpv_use_version = get_option("wpvarnish_use_version_3");
+		}
 		$wpv_wpurl = get_bloginfo("wpurl");
 		$wpv_replace_wpurl = '/^http:\/\/([^\/]+)(.*)/i';
 		$wpv_host = preg_replace($wpv_replace_wpurl, "$1", $wpv_wpurl);
 		$wpv_url = $wpv_blogaddr."/";
 		$varnish_test_conn .= "<ul>\n";
+		$varnish_test_conn .= "<li><span style=\"color: blue;\">".__("INFO - Testing Server",'wp-varnish-aas')." ".$servernum."</span></li>\n";
 		$varnish_sock = fsockopen($wpv_purgeaddr, $wpv_purgeport, $errno, $errstr, $wpv_timeout);
 		if($varnish_sock) {
 			$varnish_test_conn .= "<li><span style=\"color: green;\">".__("OK - Connection to Server",'wp-varnish-aas')."</span></li>\n";
