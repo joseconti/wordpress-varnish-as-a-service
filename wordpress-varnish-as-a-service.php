@@ -139,9 +139,9 @@ class WPVarnish {
 		
 
 		add_action('init', array(&$this, 'WPVarnishLocalization'));
-		if (!is_mulsite()){
-		add_action('admin_menu', array(&$this, 'WPVarnishAdminMenu')); // Here we Add the Varnish options page to WP Admin }
-		else {
+		if (!is_multisite()){
+		add_action('admin_menu', array(&$this, 'WPVarnishAdminMenu')); // Here we Add the Varnish options page to WP Admin
+		} else {
 		add_action('network_admin_menu', array(&$this, 'WPVarnishNetworkAdminMenu'));  // Here we Add the Varnish options page to WP Network Setting page
 		}
 		add_action('edit_post', array(&$this, 'WPVarnishPurgePost'), 99);
