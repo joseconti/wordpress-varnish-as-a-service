@@ -8,7 +8,7 @@ Plugin URI: http://javiercasares.com/wp-varnish-aas/
 Description: A plugin for purging Varnish cache when content is published or edited. It works with HTTP purge and Admin Port purge. Works with Varnish 2 (PURGE) and Varnish 3 (BAN) versions. Based on WordPress Varnish and Plugin Varnish Purges.
 */
 
-//Lets go to diffine something. We want to know wich plugin version it is, so here we say it.
+//Lets go to define something. We want to know which plugin version it is, so here we say it.
 	define('WORDPRESS_VARNISH_AS_A_SERVICE_VERSION', '1.3-Alpha1');
 
 
