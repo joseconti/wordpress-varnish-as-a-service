@@ -139,8 +139,11 @@ class WPVarnish {
 		
 
 		add_action('init', array(&$this, 'WPVarnishLocalization'));
-		add_action('admin_menu', array(&$this, 'WPVarnishAdminMenu')); // Here we Add the Varnish options page to WP Admin
+		if (!is_mulsite()){
+		add_action('admin_menu', array(&$this, 'WPVarnishAdminMenu')); // Here we Add the Varnish options page to WP Admin }
+		else {
 		add_action('network_admin_menu', array(&$this, 'WPVarnishNetworkAdminMenu'));  // Here we Add the Varnish options page to WP Network Setting page
+		}
 		add_action('edit_post', array(&$this, 'WPVarnishPurgePost'), 99);
 		add_action('edit_post', array(&$this, 'WPVarnishPurgeCommonObjects'), 99);
 		add_action('comment_post', array(&$this, 'WPVarnishPurgePostComments'),99);
